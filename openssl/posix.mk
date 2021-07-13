@@ -96,8 +96,6 @@ OS := $(shell uname)
 ifeq ($(OS),Darwin)
 SOURCEFILES += ../posix/monotonic_clock_get_time_darwin.c
 OBJFILES += monotonic_clock_get_time_darwin.o
-LDLIBS = -lpthread -lssl -lcrypto -L/usr/local/opt/openssl/lib
-CFLAGS += -I/usr/local/opt/openssl/include
 else
 SOURCEFILES += ../posix/monotonic_clock_get_time_posix.c
 OBJFILES += monotonic_clock_get_time_posix.o
